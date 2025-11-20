@@ -1,0 +1,148 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  user-select: none;
+  -webkit-user-select: none; /* для Safari */
+  -moz-user-select: none;    /* для Firefox */
+  -ms-user-select: none;     /* для Internet Explorer */
+}
+
+body {
+  /* background-image: url("../Images/bg.png"); */
+  background-size: contain;
+  background-color: rgb(138, 138, 138);
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 20px;
+  line-height: 1.5;
+
+}
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block; /* Щоб обгортав лише саму картинку */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-image {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  height: calc(var(--vh, 1vh) * 100);
+  width: auto;
+  transform: translate(-50%, 0%);
+  z-index: -1;
+  pointer-events: none; /* якщо не хочеш, щоб вона заважала */
+  image-rendering: pixelated;
+  object-fit: contain;
+}
+
+
+
+
+.Compass {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  color: rgb(65, 57, 57);
+  font-size: 120%;
+}
+
+.CompassImage {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 45%;
+  aspect-ratio: 1 / 1;
+  background: url('../CompassImages/14.png') no-repeat center/contain;
+  image-rendering: pixelated;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+
+
+
+/* Сам ефект */
+.enchant-effect {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  /* Маска по формі кадру компаса */
+  -webkit-mask-image: url('../CompassImages/14.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+
+  mask-image: url('../CompassImages/14.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  opacity: .2;
+  z-index: 10;
+}
+
+/* Анімаційна текстура */
+.enchant-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url('../CompassImages/X9K1aiE.png');
+  background-repeat: repeat;
+  background-size: 200% 200%;
+  animation: enchantMove 20s linear infinite;
+
+  background-blend-mode: lighten;
+}
+
+
+/* Рух текстури */
+@keyframes enchantMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 1000% 1200%; }
+}
+
+/* .color-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        45deg,
+        #ff4ecb,
+        #9d4dff
+    );
+    opacity: 0.5;
+    mix-blend-mode: screen;
+} */
+

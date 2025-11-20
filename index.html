@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Preparations-->
+<head>
+    <meta charset="UTF-8"> <!--Coding-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Scaling-->
+    <title>Compass</title> <!--Site Name-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--З'єднання з серверами заздалегідь-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--Те саме-->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> <!--Font Import-->
+    <link rel="stylesheet" href = "css/style.css"> <!--css Connection-->
+    <link rel="shortcut icon" href="Images/Enchanted_Compass.png" type="image/x-icon"/> <!--Site Icon-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fulltilt/0.7.4/fulltilt.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body oncontextmenu="return false;">
+
+  <div class="background-container">
+    <div class="UpdatButton">
+      <button id="get-location-btn">Update My Location</button>
+      <p id="location-output">Натисни кнопку, щоб оновити локацію</p>
+      <p id="rotation-output">Rotation:</p>
+    </div>
+    <img src="Images/bg.png" class="main-image" />
+
+    <!-- сюди можеш вставляти інші елементи, наприклад компас -->
+    <div class="CompassImage">
+      <div class="enchant-effect">
+        <div class="carousel-wrapper">
+          <div class="carousel">  </div>
+          <div class="color-overlay"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Compass">
+      <h1>Compass</h1>
+      <!-- <p> Testing Background with an image</p>🧭</p> -->
+    </div>
+    
+    
+  </div>
+
+  <script>
+    FULLTILT.getDeviceOrientation({ "type": "world" })
+      .then(function(controller) {
+        controller.listen(function() {
+          var orientation = controller.getOrientation();
+          console.log("Alpha: ", orientation.alpha);
+          console.log("Beta: ", orientation.beta);
+          console.log("Gamma: ", orientation.gamma);
+        });
+      })
+      .catch(function(error) {
+        console.error("DeviceOrientation not available:", error);
+      });
+  </script>
+
+
+
+</div>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>

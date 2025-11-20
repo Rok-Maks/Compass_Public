@@ -1,0 +1,240 @@
+/* html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-image: url("../Images/bg.png");
+  background-size: contain;
+  background-color: rgb(255, 255, 255);
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 20px;
+  line-height: 1.5;
+  background-color: #ffffff;
+
+}
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.Compass{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 100%; 
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 170%;
+
+}
+
+.compass-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.compass-base {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.compass-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.compass-base {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.enchant-effect {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  -webkit-mask-image: url('../CompassImages/0.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+
+  mask-image: url('../CompassImages/0.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  z-index: 2;
+}
+
+
+.enchant-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  
+  background-image: url('../CompassImages/z8C1r.png');
+  background-repeat: repeat;
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+
+  animation: moveDiagonal 2s linear infinite;
+
+  opacity: 0.3;
+  background-color: blueviolet;
+  background-blend-mode: multiply;
+
+  transform: rotate(45deg);
+  transform-origin: center;
+  z-index: -1;
+}
+
+@keyframes moveDiagonal {
+  0% {
+    background-position-x: 0%;
+    background-position-y: 0%;
+  }
+  100% {
+    background-position-x: 75%;
+    background-position-y: 75%;
+  }
+}
+
+*/
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-image: url("../Images/bg.png");
+  background-size: contain;
+  background-color: rgb(255, 255, 255);
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 20px;
+  line-height: 1.5;
+  background-color: #ffffff;
+
+}
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.Compass{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 100%; /* ✅ ось тут задаєш ширину в % */
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 170%;
+  /* background-color: rgba(0, 0, 0, 0.5); якщо хочеш тло під текстом */
+
+}
+
+.compass-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.compass-base {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.compass-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.compass-base {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.enchant-effect {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden; /* щоб псевдоелемент не виходив */
+
+  /* маска як і раніше */
+  -webkit-mask-image: url('../CompassImages/0.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+
+  mask-image: url('../CompassImages/0.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  z-index: 2;
+}
+
+/* Псевдоелемент з текстурою і поворотом */
+.enchant-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  
+  background-image: url('../CompassImages/X9K1aiE.png');
+  background-repeat: repeat;
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+
+  animation: moveDiagonal 1s linear infinite;
+
+  opacity: 0.2;
+  background-blend-mode: multiply;
+
+  transform-origin: center;
+  z-index: -1; /* щоб псевдоелемент був за основним ефектом */
+}
+
+@keyframes moveDiagonal {
+  0% {
+    background-position-x: 0%;
+    background-position-y: 0%;
+  }
+  100% {
+    background-position-x: 0%;
+    background-position-y: 100%;
+  }
+}
+
+
